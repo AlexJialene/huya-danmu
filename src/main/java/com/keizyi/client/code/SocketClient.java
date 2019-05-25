@@ -1,6 +1,7 @@
 package com.keizyi.client.code;
 
 
+import com.keizyi.client.callback.Callback;
 import com.keizyi.client.kit.WSLink;
 import com.keizyi.client.kit.Encrypt;
 import com.keizyi.client.kit.KeepAlive;
@@ -32,12 +33,18 @@ public class SocketClient {
 
     private String appId;
     private String key;
+    private final Callback callback;
 
     private Map<ChannelId, SocketRequestConfig> channels;
 
     public SocketClient(String appId, String key) {
+        this(appId, key, null);
+    }
+
+    public SocketClient(String appId, String key, Callback callback) {
         this.appId = appId;
         this.key = key;
+        this.callback = callback;
         channels = new ConcurrentHashMap<>();
     }
 
@@ -49,14 +56,16 @@ public class SocketClient {
 
         EventLoopGroup group = new NioEventLoopGroup();
 
-        final WebSocketClientHandler handler =
-                new WebSocketClientHandler(
-                        WebSocketClientHandshakerFactory.newHandshaker(
-                                uri,
-                                WebSocketVersion.V13,
-                                null,
-                                false,
-                                new DefaultHttpHeaders()));
+        final WebSocketClientHandler handler = new WebSocketClientHandler(
+                WebSocketClientHandshakerFactory.newHandshaker(
+                        uri,
+                        WebSocketVersion.V13,
+                        null,
+                        false,
+                        new DefaultHttpHeaders()),
+                this.callback,
+                link
+        );
 
         Bootstrap b = new Bootstrap();
         b.group(group)

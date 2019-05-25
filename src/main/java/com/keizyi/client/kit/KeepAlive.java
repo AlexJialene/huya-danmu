@@ -1,8 +1,6 @@
 package com.keizyi.client.kit;
 
 import io.netty.channel.Channel;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelFutureListener;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 
 public class KeepAlive extends Thread {
@@ -18,12 +16,9 @@ public class KeepAlive extends Thread {
 
         while (null != channel && channel.isActive()) {
             TextWebSocketFrame frame = new TextWebSocketFrame("ping");
-            channel.writeAndFlush(frame).addListener(new ChannelFutureListener() {
-                @Override
-                public void operationComplete(ChannelFuture channelFuture) throws Exception {
-                    if (channelFuture.isSuccess()){
-                        System.out.println("Keep-Alive send success ====>");
-                    }
+            channel.writeAndFlush(frame).addListener(channelFuture -> {
+                if (channelFuture.isSuccess()) {
+                    System.out.println("Keep-Alive send success ====>");
                 }
             });
 
