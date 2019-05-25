@@ -1,5 +1,6 @@
-# 虎牙弹幕
+# huya-danmu
 🐯Get the bullet screen of the [](http://www.huya.com/)
+> In development
 
 ## preface
 To apply this app you must apply for developer qualification on the open platform ([](http://open.huya.com)).
@@ -19,6 +20,10 @@ socketClient.start(WSLink.ITEM_NOTICE , 518512);
 
 ```
 Because huya different types are different websocket links, so you need to start three times separately.
+
+## callback
+
+//TODO
 
 
 
