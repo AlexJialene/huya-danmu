@@ -52,6 +52,26 @@ socketClient.start(WSLink.VIP_NOTICE , 522233);
 * WSLink.ITEM_NOTICE_SSL
 * WSLink.VIP_NOTICE_SSL
 
+## maven 
+
+```
+<repositories>
+    <repository>
+        <id>lamkeizyi-repo</id>
+        <url>https://raw.githubusercontent.com/AlexJialene/maven-repo/master/repository</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>huya-danmu</groupId>
+        <artifactId>huya-danmu</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+</dependencies>
+    
+```
+
 
 
 
