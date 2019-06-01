@@ -1,7 +1,9 @@
 # huya-danmu
 🐯Get the bullet screen of the [http://www.huya.com/](http://www.huya.com/)
 
-[Golang version](https://github.com/AlexJialene/go-huya-danmu)
+---
+
+[Golang version](https://github.com/AlexJialene/go-huya-danmu)| [LICENSE:Apache-2.0](https://github.com/AlexJialene/huya-danmu/blob/master/LICENSE)
 
 ## preface
 To apply this app you must apply for developer qualification on the open platform ([http://open.huya.com](http://open.huya.com)).
