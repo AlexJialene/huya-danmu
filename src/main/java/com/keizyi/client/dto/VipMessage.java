@@ -8,6 +8,8 @@ public class VipMessage {
     private Integer roomId;
     private String userAvatarUrl;
     private String userNick;
+    private Integer weekRank;
+    private Integer guardLevel;
 
     public String getBadgeName() {
         return badgeName;
@@ -65,6 +67,22 @@ public class VipMessage {
         this.userNick = userNick;
     }
 
+    public Integer getWeekRank() {
+        return weekRank;
+    }
+
+    public void setWeekRank(Integer weekRank) {
+        this.weekRank = weekRank;
+    }
+
+    public Integer getGuardLevel() {
+        return guardLevel;
+    }
+
+    public void setGuardLevel(Integer guardLevel) {
+        this.guardLevel = guardLevel;
+    }
+
     @Override
     public String toString() {
         return "VipMessage{" +
@@ -75,6 +93,8 @@ public class VipMessage {
                 ", roomId=" + roomId +
                 ", userAvatarUrl='" + userAvatarUrl + '\'' +
                 ", userNick='" + userNick + '\'' +
+                ", weekRank=" + weekRank +
+                ", guardLevel=" + guardLevel +
                 '}';
     }
 }

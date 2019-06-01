@@ -1,6 +1,7 @@
 # huya-danmu
 🐯Get the bullet screen of the [http://www.huya.com/](http://www.huya.com/)
-> In development
+
+[Golang version](https://github.com/AlexJialene/go-huya-danmu)
 
 ## preface
 To apply this app you must apply for developer qualification on the open platform ([http://open.huya.com](http://open.huya.com)).
@@ -52,7 +53,7 @@ socketClient.start(WSLink.VIP_NOTICE , 522233);
 * WSLink.ITEM_NOTICE_SSL
 * WSLink.VIP_NOTICE_SSL
 
-## maven 
+## Maven
 
 ```
 <repositories>
@@ -66,11 +67,13 @@ socketClient.start(WSLink.VIP_NOTICE , 522233);
     <dependency>
         <groupId>huya-danmu</groupId>
         <artifactId>huya-danmu</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.2</version>
     </dependency>
 </dependencies>
-    
 ```
+
+## Other 
+[callback parameter description](https://github.com/AlexJialene/go-huya-danmu#callback-parameter-description)
 
 
 
